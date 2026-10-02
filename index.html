@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | High School Accomplishments</title>
+    <!-- 引入 Tailwind CSS 样式框架 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold text-lg text-slate-900">Portfolio</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#making" class="hover:text-blue-600 transition">Making</a>
+                <a href="#performing" class="hover:text-blue-600 transition">Performing</a>
+                <a href="#community" class="hover:text-blue-600 transition">Community</a>
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Home 页面/区块 -->
+    <section id="home" class="min-h-[80vh] flex items-center justify-center text-center px-6 bg-gradient-to-b from-blue-50/50 to-transparent">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Innovator, Maker & Creator
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-8">
+                Welcome to my personal portfolio. Exploring the intersection of engineering, art, and community impact.
+            </p>
+            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg shadow-blue-500/25 hover:bg-blue-700 transition">
+                Explore My Work
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Projects 区块 -->
+    <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10 text-slate-900">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">Automated Solar Desalination Device</h3>
+                <p class="text-slate-600 text-sm mb-4">Research-backed engineering project focusing on high-efficiency interfacial water evaporation using novel hydrogels.</p>
+                <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Research / STEM</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">Smart IoT Hula Hoop System</h3>
+                <p class="text-slate-600 text-sm mb-4">Designed custom mechanical enclosures and integrated embedded firmware for real-time motion tracking.</p>
+                <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">Hardware / Coding</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Making 区块 (重点：动图展示功能) -->
+    <section id="making" class="py-20 bg-slate-100/50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-slate-900">Making & Fabrication</h2>
+            <p class="text-slate-600 mb-10">Hands-on creation ranging from 3D printing mechanisms to traditional cloisonné sand painting.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 动图展示卡片 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                    <!-- 动态 GIF 或 循环 MP4 视频 -->
+                    <img src="your-making-animation-1.gif" alt="3D Printing Mechanism" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h4 class="font-semibold text-lg mb-1">Custom Gearbox Assembly</h4>
+                        <p class="text-sm text-slate-600">Iterative prototyping using TPU and PLA with Bambu Studio.</p>
+                    </div>
+                </div>
+                <!-- 动图展示卡片 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                    <img src="your-making-animation-2.gif" alt="Cloisonne Sand Painting" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h4 class="font-semibold text-lg mb-1">Illuminated Art Frames</h4>
+                        <p class="text-sm text-slate-600">Blending traditional craft techniques with modern ARGB lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Performing 区块 (重点：动态表演/艺术展示) -->
+    <section id="performing" class="py-20 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-slate-900">Performing Arts</h2>
+        <p class="text-slate-600 mb-10">Showcasing stage presence, musical talents, or theatrical performances.</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <!-- 可以放表演的动态 GIF 或短视频 -->
+                <div class="relative">
+                    <video autoplay loop muted playsinline class="w-full h-64 object-cover">
+                        <source src="your-performance-clip.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Annual Concert Performance</h3>
+                    <p class="text-slate-600 text-sm">Lead instrumentalist performing classical and contemporary pieces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Community 区块 -->
+    <section id="community" class="py-20 bg-slate-100/50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-slate-900">Community Engagement</h2>
+            <p class="text-slate-600 max-w-2xl">Volunteering, peer tutoring, and leadership initiatives that foster collaborative growth and social responsibility.</p>
+        </div>
+    </section>
+
+    <!-- 6. About 区块 -->
+    <section id="about" class="py-20 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
+        <p class="text-slate-600 max-w-2xl leading-relaxed">
+            Passionate about scientific inquiry, creative engineering, and continuous learning. Dedicated to solving real-world problems with hands-on ingenuity.
+        </p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-8 text-center text-sm text-slate-500 border-t border-slate-200">
+        &copy; 2026 Portfolio. Built for Undergraduate Application.
+    </footer>
+
+</body>
+</html>
