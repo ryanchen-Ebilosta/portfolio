@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performing | Ryan Chen Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-lg text-slate-900">Ryan Chen</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="projects.html" class="hover:text-blue-600 transition">Projects</a>
+                <a href="making.html" class="hover:text-blue-600 transition">Making</a>
+                <a href="performing.html" class="text-blue-600 font-semibold">Performing</a>
+                <a href="community.html" class="hover:text-blue-600 transition">Community</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-16 max-w-6xl mx-auto px-6 w-full">
+        <h2 class="text-3xl font-bold mb-2 text-slate-900">Performing Arts</h2>
+        <p class="text-slate-600 mb-10">Stage presence, musical expression, and artistic discipline.</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <!-- 自动循环播放的无声短视频，加载快且极具动态展示效果 -->
+                <video autoplay loop muted playsinline class="w-full h-64 object-cover bg-slate-900">
+                    <source src="your-performance.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Annual Concert Performance</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Showcasing musical dedication and collaborative ensemble performance on stage.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-sm text-slate-500 border-t border-slate-200">
+        &copy; 2026 Ryan Chen. All Rights Reserved. Built for Undergraduate Application.
+    </footer>
+
+</body>
+</html>
