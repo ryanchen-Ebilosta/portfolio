@@ -1,0 +1,63 @@
+<nav class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- 网站 Logo / 名字 -->
+        <a href="index.html" class="font-bold text-lg tracking-tight text-white hover:text-blue-400 transition">Ryan Chen</a>
+        
+        <!-- 1. 电脑端横排链接（宽屏时显示，当窗口被鼠标拖窄到 768px 以下时会自动隐藏） -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="projects.html" class="hover:text-blue-400 transition">Projects</a>
+            <a href="making.html" class="hover:text-blue-400 transition">Making</a>
+            <a href="performing.html" class="hover:text-blue-400 transition">Performing</a>
+            <a href="community.html" class="hover:text-blue-400 transition">Community</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
+        </div>
+
+        <!-- 2. 手机/窄屏汉堡菜单按钮（当窗口被拖窄或在手机竖屏时才会自动出现） -->
+        <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden text-slate-400 hover:text-white focus:outline-none p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- 3. 下拉菜单面板（默认隐藏，点击右侧三条杠后展开） -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3">
+        <a href="index.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">Home</a>
+        <a href="projects.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">Projects</a>
+        <a href="making.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">Making</a>
+        <a href="performing.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">Performing</a>
+        <a href="community.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">Community</a>
+        <a href="about.html" class="block text-slate-300 hover:text-blue-400 text-sm font-medium transition py-1">About</a>
+    </div>
+</nav>
+
+<!-- 响应与交互逻辑脚本 -->
+<script>
+    (function() {
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        if (btn && menu) {
+            // 点击汉堡按钮切换展开/收起状态
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            };
+            
+            // 点击页面任意其他地方时自动收起菜单
+            document.addEventListener('click', function(e) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // 智能适配：当在电脑上把窗口从窄重新拉宽时，自动隐藏移动端菜单
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    menu.classList.add('hidden');
+                }
+            });
+        }
+    })();
+</script>

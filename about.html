@@ -8,19 +8,7 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
 
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-lg text-white hover:text-blue-400 transition">Ryan Chen</a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="projects.html" class="hover:text-blue-400 transition">Projects</a>
-                <a href="making.html" class="hover:text-blue-400 transition">Making</a>
-                <a href="performing.html" class="hover:text-blue-400 transition">Performing</a>
-                <a href="community.html" class="hover:text-blue-400 transition">Community</a>
-                <a href="about.html" class="text-blue-400 font-semibold">About</a>
-            </div>
-        </div>
-    </nav>
+<div id="nav-placeholder"></div>
 
     <main class="flex-grow py-16 max-w-6xl mx-auto px-6 w-full">
         <h2 class="text-3xl font-bold mb-2 text-white tracking-tight">About Me</h2>
@@ -36,9 +24,23 @@
         </div>
     </main>
 
-    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-800/80">
-        &copy; 2026 Ryan Chen. Built for Undergraduate Application.
-    </footer>
+<div id="footer-placeholder"></div>
+<script>
+    // 通用组件加载函数
+    async function loadComponent(id, file) {
+        try {
+            let response = await fetch(file);
+            if (response.ok) {
+                document.getElementById(id).innerHTML = await response.text();
+            }
+        } catch (error) {
+            console.error("Component load failed:", error);
+        }
+    }
+    // 自动加载导航栏和页脚
+    loadComponent('nav-placeholder', 'nav.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
 
 </body>
 </html>
