@@ -8,19 +8,68 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
 
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-lg text-white hover:text-blue-400 transition">Ryan Chen</a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="projects.html" class="hover:text-blue-400 transition">Projects</a>
-                <a href="making.html" class="hover:text-blue-400 transition">Making</a>
-                <a href="performing.html" class="text-blue-400 font-semibold">Performing</a>
-                <a href="community.html" class="hover:text-blue-400 transition">Community</a>
-                <a href="about.html" class="hover:text-blue-400 transition">About</a>
-            </div>
+<nav class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- 网站 Logo / 名字 -->
+        <a href="index.html" class="font-bold text-lg tracking-tight text-white hover:text-blue-400 transition">Ryan Chen</a>
+        
+        <!-- 1. 电脑端横排链接 -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="projects.html" class="hover:text-blue-400 transition">Projects</a>
+            <a href="making.html" class="hover:text-blue-400 transition">Making</a>
+            <a href="performing.html" class="hover:text-blue-400 transition">Performing</a>
+            <a href="community.html" class="hover:text-blue-400 transition">Community</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
         </div>
-    </nav>
+
+        <!-- 2. 手机/窄屏汉堡菜单按钮 -->
+        <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden text-slate-400 hover:text-white focus:outline-none p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- 3. 精致的小卡片悬浮下拉菜单（靠右对齐，固定宽度，刚好容纳最长选项） -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full right-6 mt-2 w-48 bg-slate-950/95 backdrop-blur-xl border border-slate-800 rounded-xl shadow-2xl p-2 space-y-1">
+        <a href="index.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">Home</a>
+        <a href="projects.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">Projects</a>
+        <a href="making.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">Making</a>
+        <a href="performing.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">Performing</a>
+        <a href="community.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">Community</a>
+        <a href="about.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-blue-400 hover:bg-slate-900 text-sm font-medium transition">About</a>
+    </div>
+</nav>
+
+<!-- 响应与交互逻辑脚本 -->
+<script>
+    (function() {
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        if (btn && menu) {
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            };
+            
+            // 点击页面其他任意地方时自动收起菜单
+            document.addEventListener('click', function(e) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // 智能适配：当在电脑上把窗口从窄重新拉宽时，自动隐藏移动端菜单
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    menu.classList.add('hidden');
+                }
+            });
+        }
+    })();
+</script>
 
     <main class="flex-grow py-16 max-w-6xl mx-auto px-6 w-full">
         <h2 class="text-3xl font-bold mb-2 text-white tracking-tight">Performing Arts</h2>
@@ -43,8 +92,7 @@
     </main>
 
     <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-800/80">
-        &copy; 2026 Ryan Chen. Built for Undergraduate Application.
+        &copy; 2026 Ryan Chen.  ryanchen.info
     </footer>
-
 </body>
 </html>
